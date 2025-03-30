@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="description" content="An AI-powered chatbot with a dark theme, designed for interactive and intelligent virtual conversations. Built using HTML, CSS, JavaScript, and OpenAI API.">
+    <meta name="keywords" content="chatbot, AI chatbot, dark-themed chatbot, AI assistant, virtual assistant, OpenAI chatbot">
+    <meta name="author" content="U koushik">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home-style.css">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Welcome Dark themed-Chatbot</title>
+</head>
+
+<body  data-aos="fade-in">
+
+    <header>
+        <nav>
+            <div class="nav-bar-holder">
+                <div class="nav-bar-inner">
+                    <img src="assets/bot.svg" alt="image">
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="home-page page">
+        <div class="homepage-inner">
+            <div class="image-container">
+                <div class="img-box">
+                    <img src="assets/bot.svg" alt="image">
+                </div>
+            </div>
+            <div class="title-text">
+                <h2>Welcome to</h2>
+                <h1>Dark-Themed <span class="special-color">CHATBOT</span></h1>
+
+            </div>
+            <div class="button-holder">
+                <a href="chatbot.html">
+                    <button class="click-to-chat">CLICK TO CHAT</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="About-us page" data-aos="zoom-in">
+        <div class="aboutus-inner">
+            <div class="about-us-text">
+                <h1>About our <span class="special-color">CHATBOT</span></h1>
+            </div>
+            <div class="paragraph-holder">
+                <p>Our AI-powered chatbot is an interactive and intelligent virtual assistant designed to enhance
+                    user engagement and provide instant responses. Developed using HTML, CSS, and
+                    JavaScript, for project purpose and powered by the Gemini AI API, this chatbot is capable of understanding natural
+                    language and delivering human-like conversations.
+
+                    With its ability to process queries in real-time, the chatbot serves as an efficient tool for
+                    answering questions, offering recommendations, and assisting users across various domains. Its
+                    sleek and responsive design ensures a smooth user experience across different devices, making it
+                    a reliable digital assistant for both casual conversations and professional interactions.
+
+                    Whether you're looking for quick information, need help with a task, or just want to chat, our
+                    chatbot is here to provide smart, engaging, and friendly interactions, anytime and anywhere
+
+                    Designed with a user-centric approach, our chatbot seamlessly integrates into websites and
+                    applications, offering a dynamic and interactive experience. Its responsive UI, crafted with
+                    Tailwind CSS, ensures smooth adaptability across various screen sizes, delivering a visually
+                    appealing and intuitive interface.
+
+                    Powered by the OpenAI API, the chatbot continuously learns and adapts, making conversations more
+                    engaging and context-aware. It can handle a wide range of queries, from providing factual answers to
+                    generating creative responses, making it a versatile tool for businesses, customer support,
+                    education, and entertainment.</p>
+                <h3>
+                    Why Choose Our Chatbot?
+                </h3>
+
+                <p>Instant Responses – Get quick and accurate answers to your queries in real-time.
+                    User-Friendly Interface – A sleek and modern design enhances usability and accessibility.
+                    AI-Powered Intelligence – Uses advanced natural language processing to understand and generate
+                    meaningful responses.
+                    Customizable & Scalable – Easily adaptable to different use cases and expandable with additional
+                    features.
+                    With this chatbot, we aim to bridge the gap between humans and technology, offering a smarter way to
+                    interact and access information effortlessly. Whether for personal use, business applications, or as
+                    a virtual assistant, this chatbot is a step toward the future of AI-driven conversations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2 class="special-color">CHATBOT</h2>
+                    <p>Smart, interactive, and AI-powered virtual assistant.</p>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>© <span id="year"></span> CHATBOT. All Rights Reserved.</p>
+                </div>
+        </footer>
+
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 300,
+        duration: 1400,
+        once: false,
+        mirror: false,
+      });
+    </script>
+</body>
+
+</html>

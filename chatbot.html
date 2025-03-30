@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta name="description" content="An AI-powered chatbot with a dark theme, designed for interactive and intelligent virtual conversations. Built using HTML, CSS, JavaScript, and OpenAI API.">
+    <meta name="keywords" content="chatbot, AI chatbot, dark-themed chatbot, AI assistant, virtual assistant, OpenAI chatbot">
+    <meta name="author" content="U koushik">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="utility.css">
+    <title>Dark-Themed Chatbot</title>
+</head>
+
+<!-- Html for main chatbot page starts here -->
+
+<body>
+    <!-- Chatbot navigation bar -->
+
+    <header class="chatbot-header">
+        <div class="chatbot-navigation-bar">
+            <div class="left-side-of-nav">
+                <img src="assets/bot.svg" alt="Bot Image">
+                <h2 class="multi-line-text" ></h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Main section of chatbot -->
+
+        <section class="Chatbot-interface">
+            <div class="chats-container">
+            </div>
+            <div class="prompt-container">
+                <form action="#" class="prompt-form-wrapper">
+                    <input type="text" placeholder="Type your message..." class="prompt-input">
+                    <div class="prompt-input-items">
+                        <button type="button" class="add-files">
+                            <p class="add-files-hover">Add files</p>
+                            <img src="assets/add-files.svg" alt="Add File">
+                        </button>
+                        <input type="file" id="file-input" class="hidden" accept="image/*, .pdf, .docx" multiple>
+
+                        <!-- File Preview Container -->
+                        <div id="file-preview-container"></div>
+
+                        <button id="send-prompt" class="send-prompt-message">
+                            <img src="assets/send-message.svg" alt="Send">
+                        </button>
+                        <button id="stop-prompt" class="stop-prompt-message">
+                            <img src="assets/stop.svg" alt="Send">
+                        </button>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- link to JS -->
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+<!-- THE END -->
+<!-- FEEL FREE TO CHANGE OR MODIFY -->

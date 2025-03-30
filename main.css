@@ -1,0 +1,463 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow-x: hidden;
+    font-family: poppins;
+}
+
+:root {
+    --text-color-home: rgb(212, 208, 208);
+    --home-button-color: purple;
+    --chatbot-text: rgb(162, 76, 243);
+    --hover-color: rgb(141, 34, 241);
+    --message-bar-color: rgba(36, 36, 36, 0.829);
+    --nav-and-footer-color: rgb(14, 13, 13);
+    --bot-message-gradient: linear-gradient(to right, #353434, #131313);
+    --user-message-gradient: linear-gradient(to left, #0b97e9, #0b485a);
+}
+
+body {
+    background-color: black;
+    color: var(--text-color-home);
+
+}
+
+header {
+    background-color: var(--nav-and-footer-color);
+    min-height: 10vh;
+    width: 100%;
+    align-items: center;
+    position: fixed;
+}
+
+/* scroll bar CSS */
+
+::-webkit-scrollbar {
+    width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-bar-color); 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #535353; 
+}
+
+.chatbot-navigation-bar .left-side-of-nav {
+    display: flex;
+    align-items: center;
+    color: var(--text-color-home);
+    font-size: 0.6rem;
+    font-weight: 700;
+}
+
+.chatbot-navigation-bar .left-side-of-nav img {
+    min-width: 30px;
+    margin: 0.8em;
+}
+
+/* Chatbot chat interface CSS */
+
+.Chatbot-interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+    padding: 2em;
+    overflow-y: auto !important;
+
+}
+
+.chats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 3em;
+    margin-bottom: 4.5em;
+    align-items: center;
+    width: 100%;
+}
+
+.message-text {
+    max-width: 70%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 16px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.typing-loader {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.typing-loader span {
+    width: 8px;
+    height: 8px;
+    background-color: gray;
+    border-radius: 50%;
+    animation: bounce 1.5s infinite;
+}
+
+.typing-loader span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-loader span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-loader span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Messages CSS */
+
+pre {
+    background-color: #282c34;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 14px;
+    line-height: 1.4;
+    display: inline-block;
+}
+
+code {
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    background-color: #333;
+    color: #f8f8f2;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.user-message-text {
+    align-self: flex-end;
+    background: var(--user-message-gradient);
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.message-text .uploaded-image {
+    width: 40vw;
+    background-size: cover;
+}
+
+.bot-message-text {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    background: var(--bot-message-gradient);
+    color: white;
+    border-bottom-left-radius: 5px;
+    gap: 10px;
+}
+
+.bot-message-text .chat-img {
+    min-width: 40px;
+    min-height: 40px;
+    align-self: flex-start;
+    border-radius: 5rem;
+    padding: 0.4rem;
+    border: 1px solid;
+    background: linear-gradient(to left, #0d0d0e, #111111);
+    animation: rotateOutline 3s linear infinite;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Animations for bot */
+
+@keyframes rotateOutline {
+    0% {
+        border-color: red;
+    }
+
+    25% {
+        border-color: blue;
+    }
+
+    50% {
+        border-color: green;
+    }
+
+    75% {
+        border-color: yellow;
+    }
+
+    100% {
+        border-color: red;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+        opacity: 0.3;
+    }
+
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Prompt container CSS */
+
+.prompt-container {
+    width: 100%;
+    background: black;
+    min-height: 10vh;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prompt-form-wrapper {
+    display: flex;
+    align-items: center;
+    width: min(90%, 1000px);
+    /* Keeps input box responsive */
+    background-color: var(--message-bar-color);
+    padding: 0.5rem;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 0.5rem;
+}
+
+.prompt-form-wrapper .prompt-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+.prompt-container .prompt-form-wrapper .prompt-input-items .add-files {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+.prompt-container .prompt-form-wrapper .prompt-input-items .add-files:hover {
+    background-color: rgba(73, 73, 73, 0.712);
+
+}
+
+.prompt-input-items .add-files .add-files-hover {
+    background-color: white;
+    outline: none;
+    position: absolute;
+    bottom: 50px;
+    padding: 0.2em;
+    opacity: 0;
+    visibility: hidden;
+    color: white;
+    border-radius: 0.2rem;
+    font-weight: 700;
+    background-color: rgba(138, 136, 136, 0.479);
+    transition: 0.3s ease-in-out;
+
+}
+
+.prompt-input-items .add-files:hover .add-files-hover {
+    opacity: 1;
+    transform: translateX(-120%);
+    visibility: visible;
+}
+
+.prompt-form-wrapper button img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.prompt-input-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.prompt-container .prompt-form-wrapper .prompt-input-items .send-prompt-message {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+.prompt-container .prompt-form-wrapper .prompt-input-items .send-prompt-message:hover {
+    background-color: rgba(73, 73, 73, 0.712);
+}
+
+.prompt-container .prompt-form-wrapper .prompt-input-items #stop-prompt {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1em;
+    border-radius: 50%;
+    display: none;
+    transition: 0.3s ease-in-out;
+}
+
+.prompt-container .prompt-form-wrapper .prompt-input-items #stop-prompt:hover {
+    background-color: rgba(73, 73, 73, 0.712);
+}
+
+/* File preview Conatiner CSS */
+
+.document-icon {
+    width: 50px;
+    height: 50px;
+    background: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.remove-file {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+
+.preview-item:hover .remove-file {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+#file-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.preview-item {
+    position: relative;
+    max-width: 150px;
+    border-radius: 8px;
+}
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Media queries */
+
+@media (max-width: 768px){
+    .message-text{
+        max-width: 80%;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 425px){
+    .bot-message-text{
+        gap: 6px;
+    }
+    .message-text{
+        max-width: 100%;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 375px){
+    .message-text{
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    .prompt-form-wrapper{
+        width: min(98%, 1000px);
+    }
+    .prompt-input-items{
+        gap: 0.1rem;
+    }
+}
+
+@media (max-width: 320px){
+    .prompt-form-wrapper{
+        width: min(100%, 1000px);
+    }
+}
+
+@media (max-width: 425px){
+    .preview-item{
+        transform: translateX(10px);
+    }
+    #file-preview-container{
+        margin: 0px;
+        position: absolute;
+        width: 40px;
+    }
+    .prompt-input-items{
+        position: relative;
+    }
+    .prompt-form-wrapper button img{
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+    .send-prompt-message{
+        padding-right: 2em;
+    }
+    .prompt-container .prompt-form-wrapper .prompt-input-items .add-files{
+        padding: 0;
+        padding-right: 2em;
+    }
+    .preview-item img{
+        width: 80%;
+        height: 80%;
+    }
+    .prompt-container .prompt-form-wrapper .prompt-input-items .send-prompt-message{
+        padding-left: 0.5em;
+    }
+}
+
+
+/* THE END */
+/* FEEL FREE TO CHANGE OR MODIFY */
