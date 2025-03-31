@@ -458,7 +458,7 @@ code {
     }
 }
 
-@media (max-width: 240px){
+@media (max-width: 290px){
     .preview-item img{
         width: 60%;
         height: 80%;

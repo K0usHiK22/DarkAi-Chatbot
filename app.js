@@ -28,7 +28,6 @@ fileInput.addEventListener("change", (event) => {
         previewFile(file);
     }
 });
-
 function previewFile(file) {
     fileCount++; // Increment file count
 
