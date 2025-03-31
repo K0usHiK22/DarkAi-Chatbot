@@ -458,6 +458,26 @@ code {
     }
 }
 
+@media (max-width: 240px){
+    .preview-item img{
+        width: 60%;
+        height: 80%;
+    }
+    .preview-item{
+        transform: translateX(9px);
+    }
+     .prompt-input-items{
+        position: absolute;
+        left: 170px;
+        top: -6px;
+        gap: 20px;
+    }
+    .prompt-container .prompt-form-wrapper .prompt-input-items .add-files{
+        padding: 0;
+    } 
+         
+}
+
 
 /* THE END */
 /* FEEL FREE TO CHANGE OR MODIFY */
